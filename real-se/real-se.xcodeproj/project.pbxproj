@@ -13,6 +13,8 @@
 		5935A073272AD99000531B99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5935A072272AD99000531B99 /* Assets.xcassets */; };
 		5935A076272AD99000531B99 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5935A075272AD99000531B99 /* Preview Assets.xcassets */; };
 		5935A079272AD99000531B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5935A077272AD99000531B99 /* LaunchScreen.storyboard */; };
+		5935A083272AE18100531B99 /* MLManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935A082272AE18100531B99 /* MLManeger.swift */; };
+		5935A085272AE22B00531B99 /* iPhoneModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5935A084272AE22B00531B99 /* iPhoneModel.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		5935A075272AD99000531B99 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5935A078272AD99000531B99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5935A07A272AD99000531B99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5935A082272AE18100531B99 /* MLManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLManeger.swift; sourceTree = "<group>"; };
+		5935A084272AE22B00531B99 /* iPhoneModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = iPhoneModel.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,11 +60,13 @@
 		5935A06B272AD99000531B99 /* real-se */ = {
 			isa = PBXGroup;
 			children = (
+				5935A081272AE13F00531B99 /* ViewModel */,
+				5935A080272AE13600531B99 /* View */,
 				5935A06C272AD99000531B99 /* AppDelegate.swift */,
 				5935A06E272AD99000531B99 /* SceneDelegate.swift */,
-				5935A070272AD99000531B99 /* ContentView.swift */,
 				5935A072272AD99000531B99 /* Assets.xcassets */,
 				5935A077272AD99000531B99 /* LaunchScreen.storyboard */,
+				5935A084272AE22B00531B99 /* iPhoneModel.mlmodel */,
 				5935A07A272AD99000531B99 /* Info.plist */,
 				5935A074272AD99000531B99 /* Preview Content */,
 			);
@@ -73,6 +79,22 @@
 				5935A075272AD99000531B99 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		5935A080272AE13600531B99 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5935A070272AD99000531B99 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5935A081272AE13F00531B99 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5935A082272AE18100531B99 /* MLManeger.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,7 +169,9 @@
 			files = (
 				5935A06D272AD99000531B99 /* AppDelegate.swift in Sources */,
 				5935A06F272AD99000531B99 /* SceneDelegate.swift in Sources */,
+				5935A083272AE18100531B99 /* MLManeger.swift in Sources */,
 				5935A071272AD99000531B99 /* ContentView.swift in Sources */,
+				5935A085272AE22B00531B99 /* iPhoneModel.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
