@@ -15,6 +15,7 @@
 		5935A079272AD99000531B99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5935A077272AD99000531B99 /* LaunchScreen.storyboard */; };
 		5935A083272AE18100531B99 /* MLManeger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935A082272AE18100531B99 /* MLManeger.swift */; };
 		5935A085272AE22B00531B99 /* iPhoneModel.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5935A084272AE22B00531B99 /* iPhoneModel.mlmodel */; };
+		5955A5DA272B26A10079544A /* activity_cml100_100.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 5955A5D9272B26A10079544A /* activity_cml100_100.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		5935A07A272AD99000531B99 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5935A082272AE18100531B99 /* MLManeger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLManeger.swift; sourceTree = "<group>"; };
 		5935A084272AE22B00531B99 /* iPhoneModel.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = iPhoneModel.mlmodel; sourceTree = "<group>"; };
+		5955A5D9272B26A10079544A /* activity_cml100_100.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = activity_cml100_100.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				5935A072272AD99000531B99 /* Assets.xcassets */,
 				5935A077272AD99000531B99 /* LaunchScreen.storyboard */,
 				5935A084272AE22B00531B99 /* iPhoneModel.mlmodel */,
+				5955A5D9272B26A10079544A /* activity_cml100_100.mlmodel */,
 				5935A07A272AD99000531B99 /* Info.plist */,
 				5935A074272AD99000531B99 /* Preview Content */,
 			);
@@ -170,6 +173,7 @@
 				5935A06D272AD99000531B99 /* AppDelegate.swift in Sources */,
 				5935A06F272AD99000531B99 /* SceneDelegate.swift in Sources */,
 				5935A083272AE18100531B99 /* MLManeger.swift in Sources */,
+				5955A5DA272B26A10079544A /* activity_cml100_100.mlmodel in Sources */,
 				5935A071272AD99000531B99 /* ContentView.swift in Sources */,
 				5935A085272AE22B00531B99 /* iPhoneModel.mlmodel in Sources */,
 			);

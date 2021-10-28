@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var mlManeger = MLManeger()
     var body: some View {
-        Text("Hello, world!")
+        Text(mlManeger.classLabel)
             .padding()
     }
 }
