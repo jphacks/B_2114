@@ -7,7 +7,6 @@
 
 import Foundation
 import CoreMotion
-import simd
 import CoreML
 import Combine
 
@@ -58,18 +57,18 @@ class MLManeger: ObservableObject{
     }
 
     func getMotionData(deviceMotion:CMDeviceMotion) {
-        print("attitudeX:", deviceMotion.attitude.pitch)
-        print("attitudeY:", deviceMotion.attitude.roll)
-        print("attitudeZ:", deviceMotion.attitude.yaw)
-        print("gyroX:", deviceMotion.rotationRate.x)
-        print("gyroY:", deviceMotion.rotationRate.y)
-        print("gyroZ:", deviceMotion.rotationRate.z)
-        print("gravityX:", deviceMotion.gravity.x)
-        print("gravityY:", deviceMotion.gravity.y)
-        print("gravityZ:", deviceMotion.gravity.z)
-        print("accX:", deviceMotion.userAcceleration.x)
-        print("accY:", deviceMotion.userAcceleration.y)
-        print("accZ:", deviceMotion.userAcceleration.z)
+//        print("attitudeX:", deviceMotion.attitude.pitch)
+//        print("attitudeY:", deviceMotion.attitude.roll)
+//        print("attitudeZ:", deviceMotion.attitude.yaw)
+//        print("gyroX:", deviceMotion.rotationRate.x)
+//        print("gyroY:", deviceMotion.rotationRate.y)
+//        print("gyroZ:", deviceMotion.rotationRate.z)
+//        print("gravityX:", deviceMotion.gravity.x)
+//        print("gravityY:", deviceMotion.gravity.y)
+//        print("gravityZ:", deviceMotion.gravity.z)
+//        print("accX:", deviceMotion.userAcceleration.x)
+//        print("accY:", deviceMotion.userAcceleration.y)
+//        print("accZ:", deviceMotion.userAcceleration.z)
 
         attitudeX.append(deviceMotion.attitude.pitch)
         attitudeY.append(deviceMotion.attitude.roll)
