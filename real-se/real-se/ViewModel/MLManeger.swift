@@ -13,6 +13,8 @@ import Combine
 class MLManeger: ObservableObject{
 
     @Published var classLabel = ""
+    @Published var movieRate = Float(2.0)
+    @Published var jumptoggle: Bool = false
     let motionManager = CMMotionManager()
     static let configuration = MLModelConfiguration()
     let model = try! activity_cml_hand2(configuration: configuration)
@@ -147,37 +149,59 @@ class MLManeger: ObservableObject{
         guard let output = try? model.prediction(input: activity_cml_hand2Input(accX: accXarray, accY: accYarray, accZ: accZarray, gravityX: gravityXarray, gravityY: gravityYarray, gravityZ: gravityZarray, gyroX: gyroXarray, gyroY: gyroYarray, gyroZ: gyroZarray, stateIn: currentState)) else {
                 fatalError("Unexpected runtime error.")
         }
+        
 
-        classLabel = output.label
-        getSound(labelName: classLabel)
+//        classLabel = output.label
+        getSound(labelName: output.label)
+        classLabel = changeJapanese(labelName: output.label)
         currentState = output.stateOut
         predictionCount += 1
+    }
+    
+    func changeJapanese(labelName: String) -> String{
+        switch labelName {
+        case "walk":
+            return "あるく"
+        case "run":
+            return "はしる"
+        case "jump":
+            return "じゃんぷ"
+        default:
+            return "なし"
+        }
     }
     
     func getSound(labelName: String){
         switch labelName {
         case "jump":
             Ch.shared.sePlaySound(name: "jump")
+            jumptoggle = true
             preLabel = "jump"
         case "run":
+            jumptoggle = false
             if preLabel != "run" || preLabel == "" {
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
             } else if preLabel == "walk"{
                 Ch.shared.changeRateBgm(rate: 0.7)
+                movieRate = Float(2.0)
             }
             preLabel = "run"
         case "walk":
+            jumptoggle = false
             if preLabel != "walk" || preLabel == "" {
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.4)
             } else if preLabel == "run" {
                 Ch.shared.changeRateBgm(rate: 0.5)
+                movieRate = Float(1.1)
             }
             preLabel = "walk"
         case "stop":
+            jumptoggle = false
             if preLabel == "stop" {
                 stopCnt += 1
                 if stopCnt == 2 {
                     Ch.shared.stopBgm()
+                    movieRate = Float(0.0)
                     stopCnt = 0
                 }
             }else if preLabel != "stop" {
