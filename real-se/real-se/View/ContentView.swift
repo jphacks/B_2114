@@ -10,20 +10,26 @@ import AVKit
 
 struct ContentView: View {
     @ObservedObject var mlManeger = MLManeger()
-
+    @State private var jumptoggle: Bool = true
+    
     var body: some View {
 //        Text(mlManeger.classLabel)
 //            .padding()
         VStack{
-//            MovieView()
             ZStack(alignment: .bottom) {
+//                MovieView()
                 Image("room")
                     .frame(width: 760, height: 760)
-                Image("person_normal")
+                Image("person_run")
                     .resizable()
                     .frame(width: 160.0, height: 200.0, alignment: .leading)
-                    .offset(y: -170)
+                    .offset(y: jumptoggle ? -164 : -264)
+                    .onAppear(perform: {
+                        jumptoggle.toggle()
+                    })
+                    .animation(Animation.interactiveSpring(dampingFraction: 0.2).repeatForever())
             }
+            
             
             VStack(alignment: .leading, spacing: 0) {}
             ZStack {
