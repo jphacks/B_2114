@@ -18,6 +18,7 @@
 		2684A748272C15BE00AA3C47 /* aui.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2684A747272C15BE00AA3C47 /* aui.ttf */; };
 		2684A74B272C179800AA3C47 /* DragonQuestFC.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2684A74A272C179800AA3C47 /* DragonQuestFC.ttf */; };
 		59307F0D272C3636000513E5 /* activity_cml_hand.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 59307F0C272C3636000513E5 /* activity_cml_hand.mlmodel */; };
+		59307F0F272C4E3B000513E5 /* activity_cml_hand2.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 59307F0E272C4E3B000513E5 /* activity_cml_hand2.mlmodel */; };
 		5935A06D272AD99000531B99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935A06C272AD99000531B99 /* AppDelegate.swift */; };
 		5935A06F272AD99000531B99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935A06E272AD99000531B99 /* SceneDelegate.swift */; };
 		5935A071272AD99000531B99 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5935A070272AD99000531B99 /* ContentView.swift */; };
@@ -42,6 +43,7 @@
 		2684A747272C15BE00AA3C47 /* aui.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = aui.ttf; sourceTree = "<group>"; };
 		2684A74A272C179800AA3C47 /* DragonQuestFC.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = DragonQuestFC.ttf; sourceTree = "<group>"; };
 		59307F0C272C3636000513E5 /* activity_cml_hand.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = activity_cml_hand.mlmodel; sourceTree = "<group>"; };
+		59307F0E272C4E3B000513E5 /* activity_cml_hand2.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = activity_cml_hand2.mlmodel; sourceTree = "<group>"; };
 		5935A069272AD99000531B99 /* real-se.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "real-se.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5935A06C272AD99000531B99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5935A06E272AD99000531B99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				5935A077272AD99000531B99 /* LaunchScreen.storyboard */,
 				5935A084272AE22B00531B99 /* iPhoneModel.mlmodel */,
 				5955A5D9272B26A10079544A /* activity_cml100_100.mlmodel */,
+				59307F0E272C4E3B000513E5 /* activity_cml_hand2.mlmodel */,
 				59307F0C272C3636000513E5 /* activity_cml_hand.mlmodel */,
 				5935A07A272AD99000531B99 /* Info.plist */,
 				5935A074272AD99000531B99 /* Preview Content */,
@@ -233,6 +236,7 @@
 			files = (
 				5935A06D272AD99000531B99 /* AppDelegate.swift in Sources */,
 				5935A06F272AD99000531B99 /* SceneDelegate.swift in Sources */,
+				59307F0F272C4E3B000513E5 /* activity_cml_hand2.mlmodel in Sources */,
 				2684A72B272BDBF200AA3C47 /* Ch.swift in Sources */,
 				5935A083272AE18100531B99 /* MLManeger.swift in Sources */,
 				59307F0D272C3636000513E5 /* activity_cml_hand.mlmodel in Sources */,
