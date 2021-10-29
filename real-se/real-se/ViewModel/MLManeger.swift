@@ -158,6 +158,7 @@ class MLManeger: ObservableObject{
         switch labelName {
         case "jump":
             Ch.shared.sePlaySound(name: "jump")
+            preLabel = "jump"
         case "run":
             if preLabel != "run" || preLabel == "" {
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
@@ -178,6 +179,7 @@ class MLManeger: ObservableObject{
                 Ch.shared.stopBgm()
                 stopCnt = 0
             }
+            preLabel = "stop"
             default:
               print("その他の値")
         }
