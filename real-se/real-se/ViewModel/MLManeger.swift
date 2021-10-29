@@ -34,6 +34,10 @@ class MLManeger: ObservableObject{
     var accY = [Double]()
     var accZ = [Double]()
     var currentState = try! MLMultiArray(shape: [NSNumber(value: 400)], dataType: MLMultiArrayDataType.double)
+    
+    // BGM用
+    var stopCnt: Int = 0
+    var preLabel: String = ""
 
     init() {
         startSensorUpdates(intervalSeconds: 0.02) // 50Hz
@@ -58,18 +62,18 @@ class MLManeger: ObservableObject{
     }
 
     func getMotionData(deviceMotion:CMDeviceMotion) {
-        print("attitudeX:", deviceMotion.attitude.pitch)
-        print("attitudeY:", deviceMotion.attitude.roll)
-        print("attitudeZ:", deviceMotion.attitude.yaw)
-        print("gyroX:", deviceMotion.rotationRate.x)
-        print("gyroY:", deviceMotion.rotationRate.y)
-        print("gyroZ:", deviceMotion.rotationRate.z)
-        print("gravityX:", deviceMotion.gravity.x)
-        print("gravityY:", deviceMotion.gravity.y)
-        print("gravityZ:", deviceMotion.gravity.z)
-        print("accX:", deviceMotion.userAcceleration.x)
-        print("accY:", deviceMotion.userAcceleration.y)
-        print("accZ:", deviceMotion.userAcceleration.z)
+//        print("attitudeX:", deviceMotion.attitude.pitch)
+//        print("attitudeY:", deviceMotion.attitude.roll)
+//        print("attitudeZ:", deviceMotion.attitude.yaw)
+//        print("gyroX:", deviceMotion.rotationRate.x)
+//        print("gyroY:", deviceMotion.rotationRate.y)
+//        print("gyroZ:", deviceMotion.rotationRate.z)
+//        print("gravityX:", deviceMotion.gravity.x)
+//        print("gravityY:", deviceMotion.gravity.y)
+//        print("gravityZ:", deviceMotion.gravity.z)
+//        print("accX:", deviceMotion.userAcceleration.x)
+//        print("accY:", deviceMotion.userAcceleration.y)
+//        print("accZ:", deviceMotion.userAcceleration.z)
 
         attitudeX.append(deviceMotion.attitude.pitch)
         attitudeY.append(deviceMotion.attitude.roll)
@@ -146,8 +150,38 @@ class MLManeger: ObservableObject{
         }
 
         classLabel = output.label
+        getSound(labelName: classLabel)
         currentState = output.stateOut
         predictionCount += 1
+    }
+    
+    func getSound(labelName: String){
+        switch labelName {
+        case "jump":
+            Ch.shared.sePlaySound(name: "jump")
+        case "run":
+            if preLabel != "run" || preLabel == "" {
+                Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
+            } else if preLabel == "walk"{
+                Ch.shared.changeRateBgm(rate: 0.7)
+            }
+            preLabel = "run"
+        case "walk":
+            if preLabel != "walk" || preLabel == "" {
+                Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.4)
+            } else if preLabel == "run" {
+                Ch.shared.changeRateBgm(rate: 0.5)
+            }
+            preLabel = "walk"
+        case "stop":
+            stopCnt += 1
+            if stopCnt == 3 {
+                Ch.shared.stopBgm()
+                stopCnt = 0
+            }
+            default:
+              print("その他の値")
+        }
     }
 
 }
