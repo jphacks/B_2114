@@ -174,11 +174,16 @@ class MLManeger: ObservableObject{
             }
             preLabel = "walk"
         case "stop":
-            stopCnt += 1
-            if stopCnt == 3 {
-                Ch.shared.stopBgm()
+            if preLabel == "stop" {
+                stopCnt += 1
+                if stopCnt == 2 {
+                    Ch.shared.stopBgm()
+                    stopCnt = 0
+                }
+            }else if preLabel != "stop" {
                 stopCnt = 0
             }
+
             preLabel = "stop"
             default:
               print("その他の値")
