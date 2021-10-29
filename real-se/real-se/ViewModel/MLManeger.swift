@@ -160,23 +160,24 @@ class MLManeger: ObservableObject{
         case "jump":
             Ch.shared.sePlaySound(name: "jump")
         case "run":
-            if preLabel != "run" || preLabel == ""{
+            if preLabel != "run" || preLabel == "" {
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
-            }else if preLabel == "walk"{
+            } else if preLabel == "walk"{
                 Ch.shared.changeRateBgm(rate: 0.7)
             }
             preLabel = "run"
         case "walk":
             if preLabel != "walk" || preLabel == "" {
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.4)
-            }else if preLabel == "run"{
+            } else if preLabel == "run" {
                 Ch.shared.changeRateBgm(rate: 0.5)
             }
             preLabel = "walk"
         case "stop":
             stopCnt += 1
-            if stopCnt == 3{
+            if stopCnt == 3 {
                 Ch.shared.stopBgm()
+                stopCnt = 0
             }
             default:
               print("その他の値")
