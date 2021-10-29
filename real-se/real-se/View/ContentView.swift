@@ -9,15 +9,13 @@ import SwiftUI
 import AVKit
 
 struct ContentView: View {
-    @ObservedObject var mlManeger = MLManeger()
+    @EnvironmentObject var mlManeger: MLManeger
 
     var body: some View {
-//        Text(mlManeger.classLabel)
-//            .padding()
         VStack{
-//            MovieView()
             ZStack(alignment: .bottom) {
-                Image("room")
+                MovieView()
+//                Image("room")
                     .frame(width: 760, height: 760)
                 Image("person_normal")
                     .resizable()
@@ -85,55 +83,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-    }
-}
-
-struct MovieView: UIViewRepresentable{
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<MovieView>) {
-    }
-    
-    func makeUIView(context: Context) -> UIView {
-        return PlayerClass(frame: .zero)
-    }
-}
-
-class PlayerClass: UIView {
-    private let avPlayerLayer = AVPlayerLayer()
-    var itemURL: URL?
-
-    let startTime : CMTime = CMTimeMake(value: 2, timescale: 1)
-
-    override init(frame: CGRect) {
-    super.init(frame: frame)
-
-    let url = Bundle.main.path(forResource: "load", ofType: "mov")
-    let player = AVPlayer(url: URL(fileURLWithPath: url!))
-
-    player.actionAtItemEnd = .none
-    player.seek(to: startTime)
-    player.play()
-    player.rate = 2.0
-    avPlayerLayer.player = player
-
-    NotificationCenter.default.addObserver(self,selector: #selector(playerDidEnd(notification:)),name: .AVPlayerItemDidPlayToEndTime,object: player.currentItem)
-
-    layer.addSublayer(avPlayerLayer)
-
-    }
-
-    @objc func playerDidEnd(notification: Notification) {
-    if let avPlayerItem = notification.object as? AVPlayerItem {
-    avPlayerItem.seek(to: startTime, completionHandler: nil)
-    }
-    }
-
-    required init?(coder: NSCoder) {
-    fatalError("init error")
-    }
-
-    override func layoutSubviews() {
-    super.layoutSubviews()
-    avPlayerLayer.frame = bounds
+        ContentView().environmentObject(MLManeger())
     }
 }

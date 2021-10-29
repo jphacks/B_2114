@@ -13,6 +13,7 @@ import Combine
 class MLManeger: ObservableObject{
 
     @Published var classLabel = ""
+    @Published var movieRate = Float(2.0)
     let motionManager = CMMotionManager()
     static let configuration = MLModelConfiguration()
     let model = try! activity_cml_hand2(configuration: configuration)
@@ -179,6 +180,7 @@ class MLManeger: ObservableObject{
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
             } else if preLabel == "walk"{
                 Ch.shared.changeRateBgm(rate: 0.7)
+                movieRate = Float(2.0)
             }
             preLabel = "run"
         case "walk":
@@ -186,6 +188,7 @@ class MLManeger: ObservableObject{
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.4)
             } else if preLabel == "run" {
                 Ch.shared.changeRateBgm(rate: 0.5)
+                movieRate = Float(1.1)
             }
             preLabel = "walk"
         case "stop":
@@ -193,6 +196,7 @@ class MLManeger: ObservableObject{
                 stopCnt += 1
                 if stopCnt == 2 {
                     Ch.shared.stopBgm()
+                    movieRate = Float(0.0)
                     stopCnt = 0
                 }
             }else if preLabel != "stop" {
