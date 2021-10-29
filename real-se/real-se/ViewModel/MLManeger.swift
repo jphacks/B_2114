@@ -14,6 +14,7 @@ class MLManeger: ObservableObject{
 
     @Published var classLabel = ""
     @Published var movieRate = Float(2.0)
+    @Published var jumptoggle: Bool = false
     let motionManager = CMMotionManager()
     static let configuration = MLModelConfiguration()
     let model = try! activity_cml_hand2(configuration: configuration)
@@ -174,8 +175,10 @@ class MLManeger: ObservableObject{
         switch labelName {
         case "jump":
             Ch.shared.sePlaySound(name: "jump")
+            jumptoggle = true
             preLabel = "jump"
         case "run":
+            jumptoggle = false
             if preLabel != "run" || preLabel == "" {
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
             } else if preLabel == "walk"{
@@ -184,6 +187,7 @@ class MLManeger: ObservableObject{
             }
             preLabel = "run"
         case "walk":
+            jumptoggle = false
             if preLabel != "walk" || preLabel == "" {
                 Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.4)
             } else if preLabel == "run" {
@@ -192,6 +196,7 @@ class MLManeger: ObservableObject{
             }
             preLabel = "walk"
         case "stop":
+            jumptoggle = false
             if preLabel == "stop" {
                 stopCnt += 1
                 if stopCnt == 2 {

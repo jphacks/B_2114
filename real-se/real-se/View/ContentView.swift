@@ -10,18 +10,21 @@ import AVKit
 
 struct ContentView: View {
     @EnvironmentObject var mlManeger: MLManeger
-
+//    @State private var jumptoggle: Bool = true
     var body: some View {
         VStack{
             ZStack(alignment: .bottom) {
                 MovieView()
 //                Image("room")
                     .frame(width: 760, height: 760)
-                Image("person_normal")
+                Image("person_run")
                     .resizable()
                     .frame(width: 160.0, height: 200.0, alignment: .leading)
-                    .offset(y: -170)
+                    .offset(y: mlManeger.jumptoggle ? -264 : -164)
+                    .animation(Animation.interactiveSpring(dampingFraction: 0.2))
+                    
             }
+            
             
             VStack(alignment: .leading, spacing: 0) {}
             ZStack {
