@@ -8,6 +8,10 @@
 	<string>BLEを使用します</string>
 	<key>CFBundleGetInfoString</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>DragonQuestFC.ttf</string>
+	</array>
 	<key>CFBundleDisplayName</key>
 	<string></string>
 	<key>LSApplicationCategoryType</key>
