@@ -146,8 +146,24 @@ class MLManeger: ObservableObject{
         }
 
         classLabel = output.label
+        getSound(labelName: classLabel)
         currentState = output.stateOut
         predictionCount += 1
+    }
+    
+    func getSound(labelName: String){
+        switch labelName {
+        case "jump":
+            Ch.shared.sePlaySound(name: "enter")
+        case "run":
+            Ch.shared.bgmPlaySound(name: "enter", rate: 0.7)
+        case "walk":
+            Ch.shared.bgmPlaySound(name: "enter", rate: 0.4)
+        case "stop":
+            Ch.shared.bgmPlaySound(name: "enter", rate: 0.4)
+            default:
+              print("その他の値")
+        }
     }
 
 }

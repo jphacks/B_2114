@@ -9,9 +9,15 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var mlManeger = MLManeger()
+
     var body: some View {
         Text(mlManeger.classLabel)
             .padding()
+        
+        Button("Play") {
+            Ch.shared.bgmPlaySound(name: "enter",rate: 0.7)
+        }
+
     }
 }
 
