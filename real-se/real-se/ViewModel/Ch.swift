@@ -38,6 +38,20 @@ class Ch {
         }
     }
     
+    func stopBgm(){
+        if bgmPlayer != nil{
+            bgmPlayer.stop()
+            
+        }
+    }
+    
+    func changeRateBgm(rate: Float){
+        if bgmPlayer != nil{
+            bgmPlayer.rate = rate
+            
+        }
+    }
+    
     func sePlaySound(name: String, loopNum: Int = 1) {
         guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
             print("音源ファイルが見つかりません")
