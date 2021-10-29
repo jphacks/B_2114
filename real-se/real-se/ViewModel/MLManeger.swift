@@ -147,11 +147,26 @@ class MLManeger: ObservableObject{
         guard let output = try? model.prediction(input: activity_cml_hand2Input(accX: accXarray, accY: accYarray, accZ: accZarray, gravityX: gravityXarray, gravityY: gravityYarray, gravityZ: gravityZarray, gyroX: gyroXarray, gyroY: gyroYarray, gyroZ: gyroZarray, stateIn: currentState)) else {
                 fatalError("Unexpected runtime error.")
         }
+        
 
-        classLabel = output.label
-        getSound(labelName: classLabel)
+//        classLabel = output.label
+        getSound(labelName: output.label)
+        classLabel = changeJapanese(labelName: output.label)
         currentState = output.stateOut
         predictionCount += 1
+    }
+    
+    func changeJapanese(labelName: String) -> String{
+        switch labelName {
+        case "walk":
+            return "あるく"
+        case "run":
+            return "はしる"
+        case "jump":
+            return "じゃんぷ"
+        default:
+            return "なし"
+        }
     }
     
     func getSound(labelName: String){

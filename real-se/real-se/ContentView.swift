@@ -1,56 +1,46 @@
 //
 //  ContentView.swift
-//  real-se
+//  Shared
 //
-//  Created by Rei Nakaoka on 2021/10/28.
+//  Created by 宮地篤士 on 2021/10/29.
 //
 
 import SwiftUI
 import AVKit
 
 struct ContentView: View {
-    @ObservedObject var mlManeger = MLManeger()
-
     var body: some View {
-//        Text(mlManeger.classLabel)
-//            .padding()
-        VStack{
-//            MovieView()
-            ZStack(alignment: .bottom) {
-                Image("room")
-                    .frame(width: 760, height: 760)
-                Image("person_normal")
-                    .resizable()
-                    .frame(width: 160.0, height: 200.0, alignment: .leading)
-                    .offset(y: -170)
-            }
             
+        VStack{
+            MovieView()
+            .frame(width: 720, height: 720)
             VStack(alignment: .leading, spacing: 0) {}
             ZStack {
                 Rectangle()
                 .fill(Color(#colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)))
-                .frame(width: 414, height: 368)
+                .frame(width: 375, height: 310)
                 .edgesIgnoringSafeArea(.bottom)
                 HStack {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                         .strokeBorder(Color(#colorLiteral(red: 0.9490196108818054, green: 0.9490196108818054, blue: 0.9490196108818054, alpha: 1)), lineWidth: 3)
-                        .frame(width: 220, height: 260)
+                        .frame(width: 200, height: 240)
                         Text("こうどう")
                             .font(.custom("DragonQuestFC", size: 32))
                             .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                             .padding(8)
                             .background(Color.black)
                             .offset(x: -50, y: -130)
-                        Text(mlManeger.classLabel)
+                        Text("じゃんぷ")
                             .font(.custom("DragonQuestFC", size: 80))
                             .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
                             .offset(y: -20)
+                       
                     }
                     ZStack {
                         RoundedRectangle(cornerRadius: 10)
                         .strokeBorder(Color(#colorLiteral(red: 0.9490196108818054, green: 0.9490196108818054, blue: 0.9490196108818054, alpha: 1)), lineWidth: 3)
-                        .frame(width: 128, height: 260)
+                        .frame(width: 127, height: 240)
                         Text("にんしき")
                             .font(.custom("DragonQuestFC", size: 32))
                             .foregroundColor(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)))
@@ -78,7 +68,7 @@ struct ContentView: View {
                         }.offset(y: -20)
                     }
                 }
-            }.offset(y: -128)
+            }.offset(y: -108)
         }
     }
 }
