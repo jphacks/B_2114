@@ -15,9 +15,9 @@ class MLManeger: ObservableObject{
     @Published var classLabel = ""
     let motionManager = CMMotionManager()
     static let configuration = MLModelConfiguration()
-    let model = try! activity_cml100_100(configuration: configuration)
+    let model = try! activity_cml_hand(configuration: configuration)
 
-    let inputDataLength = 100
+    let inputDataLength = 50
     var predictionCount = 0
 
     var attitudeX = [Double]()
@@ -144,7 +144,7 @@ class MLManeger: ObservableObject{
         }
 
         // input data to CoreML model
-        guard let output = try? model.prediction(input: activity_cml100_100Input(accX: accXarray, accY: accYarray, accZ: accZarray, stateIn: currentState)) else {
+        guard let output = try? model.prediction(input: activity_cml_handInput(accX: accXarray, accY: accYarray, accZ: accZarray, attitudeX: attitudeXarray, attitudeY: attitudeYarray, attitudeZ: attitudeZarray, gravityX: gravityXarray, gravityY: gravityYarray, gravityZ: gravityZarray, gyroX: gyroXarray, gyroY: gyroYarray, gyroZ: gyroZarray, stateIn: currentState)) else {
                 fatalError("Unexpected runtime error.")
         }
 
