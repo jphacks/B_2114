@@ -7,7 +7,6 @@
 
 import Foundation
 import CoreMotion
-import simd
 import CoreML
 import Combine
 
