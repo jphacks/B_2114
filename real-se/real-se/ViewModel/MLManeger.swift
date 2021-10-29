@@ -13,7 +13,7 @@ import Combine
 
 class MLManeger: ObservableObject{
 
-    @Published var classLabel = "hello"
+    @Published var classLabel = ""
     let motionManager = CMMotionManager()
     static let configuration = MLModelConfiguration()
     let model = try! activity_cml100_100(configuration: configuration)
@@ -122,52 +122,22 @@ class MLManeger: ObservableObject{
         let accYarray = try! MLMultiArray(shape: [dataNum], dataType: MLMultiArrayDataType.double)
         let accZarray = try! MLMultiArray(shape: [dataNum], dataType: MLMultiArrayDataType.double)
 
-        for (index, data) in attitudeX.enumerated(){
-            attitudeXarray[index] = data as NSNumber
-        }
+        for i in 0..<50 {
+            attitudeXarray[i] = attitudeX[i] as NSNumber
+            attitudeYarray[i] = attitudeY[i] as NSNumber
+            attitudeZarray[i] = attitudeZ[i] as NSNumber
 
-        for (index, data) in attitudeY.enumerated(){
-            attitudeYarray[index] = data as NSNumber
-        }
+            gyroXarray[i] = gyroX[i] as NSNumber
+            gyroYarray[i] = gyroY[i] as NSNumber
+            gyroZarray[i] = gyroZ[i] as NSNumber
 
-        for (index, data) in attitudeZ.enumerated(){
-            attitudeZarray[index] = data as NSNumber
-        }
+            gravityXarray[i] = gravityX[i] as NSNumber
+            gravityYarray[i] = gravityY[i] as NSNumber
+            gravityZarray[i] = gravityZ[i] as NSNumber
 
-        for (index, data) in gyroX.enumerated(){
-            gyroXarray[index] = data as NSNumber
-        }
-
-        for (index, data) in gyroY.enumerated(){
-            gyroYarray[index] = data as NSNumber
-        }
-
-        for (index, data) in gyroZ.enumerated(){
-            gyroZarray[index] = data as NSNumber
-        }
-
-        for (index, data) in gravityX.enumerated(){
-            gravityXarray[index] = data as NSNumber
-        }
-
-        for (index, data) in gravityY.enumerated(){
-            gravityYarray[index] = data as NSNumber
-        }
-
-        for (index, data) in gravityZ.enumerated(){
-            gravityZarray[index] = data as NSNumber
-        }
-
-        for (index, data) in accX.enumerated(){
-            accXarray[index] = data as NSNumber
-        }
-
-        for (index, data) in accY.enumerated(){
-            accYarray[index] = data as NSNumber
-        }
-
-        for (index, data) in accZ.enumerated(){
-            accZarray[index] = data as NSNumber
+            accXarray[i] = accX[i] as NSNumber
+            accYarray[i] = accY[i] as NSNumber
+            accZarray[i] = accZ[i] as NSNumber
         }
 
         // input data to CoreML model
