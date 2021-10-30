@@ -81,7 +81,7 @@ class BLEManeger: NSObject, ObservableObject, CLLocationManagerDelegate {
             if becon.minor == 1100 {
                 rssi = becon.rssi
                 print(rssi)
-                if rssi > -65 {
+                if rssi > -65 && rssi != 0{
                     rssiOverCnt += 1
                     rssiUnderCnt = 0
                     if rssiOverCnt == 3 {
@@ -90,7 +90,7 @@ class BLEManeger: NSObject, ObservableObject, CLLocationManagerDelegate {
                         Ch.shared.sePlaySound(name: "enter2")
                         Ch.shared.bgmPlaySound(name: "inHouse", rate: 0.7)
                     }
-                } else {
+                } else if rssi != 0{
                     rssiUnderCnt += 1
                     rssiOverCnt = 0
                     if rssiUnderCnt == 3 {
