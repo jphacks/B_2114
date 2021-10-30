@@ -2,6 +2,7 @@
 
 [![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2021/07/JPHACKS2021_ogp.jpg)](https://www.youtube.com/watch?v=LUPQFB4QyVo)
 <img src="https://github.com/jphacks/B_2114/blob/readme_image/249367338_424718665905165_6524117385739234586_n.png" width="320px">
+<img src="https://github.com/jphacks/B_2114/blob/readme_image/247612812_405356637911587_6354832948071446773_n.jpg" width="320px">
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
