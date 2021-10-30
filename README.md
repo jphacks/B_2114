@@ -30,6 +30,7 @@
 ## 開発技術
 ### 活用した技術
 <img src="https://github.com/jphacks/B_2114/blob/master/tech_spec.png" width="100%">
+
 #### フレームワーク・ライブラリ・モジュール
 * Swift
 * SwiftUI
