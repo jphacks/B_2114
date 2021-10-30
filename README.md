@@ -44,6 +44,9 @@
 * iPhone
 * BLE Beacon
 
+### デモ
+https://youtu.be/ijUwAjiHuRA
+
 ### 独自技術
 #### ハッカソンで開発した独自機能・技術
 * 歩く，走る，ジャンプの行動認識モデル
