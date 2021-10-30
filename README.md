@@ -1,7 +1,8 @@
-# D2G(Daily to Game)
-<img src="https://github.com/jphacks/B_2114/blob/readme_image/d2gicon.png" width="120px">
-
 [![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2021/07/JPHACKS2021_ogp.jpg)](https://www.youtube.com/watch?v=LUPQFB4QyVo)
+
+# D2G(Daily to Game)
+<img src="https://github.com/jphacks/B_2114/blob/readme_image/d2g_main.png" width="100%">
+
 <img src="https://github.com/jphacks/B_2114/blob/readme_image/ss_walk.jpg" width="320px">
 <img src="https://github.com/jphacks/B_2114/blob/readme_image/ss_home.png" width="320px">
 
