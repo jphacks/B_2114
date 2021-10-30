@@ -3,8 +3,9 @@
 # D2G(Daily to Game)
 <img src="https://github.com/jphacks/B_2114/blob/readme_image/d2g_main.png" width="100%">
 
-<img src="https://github.com/jphacks/B_2114/blob/readme_image/ss_walk.jpg" width="320px">
-<img src="https://github.com/jphacks/B_2114/blob/readme_image/ss_home.png" width="320px">
+| | |
+|--|--|
+|[![IMAGE ALT TEXT HERE](https://github.com/jphacks/B_2114/blob/readme_image/ss_walk.jpg)](https://www.youtube.com/watch?v=LUPQFB4QyVo)|[![IMAGE ALT TEXT HERE](https://github.com/jphacks/B_2114/blob/readme_image/ss_home.png)](https://www.youtube.com/watch?v=LUPQFB4QyVo)|
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
