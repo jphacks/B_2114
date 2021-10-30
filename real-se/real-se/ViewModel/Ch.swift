@@ -14,11 +14,18 @@ class Ch {
     
     var bgmPlayer: AVAudioPlayer!
     var sePlayer: AVAudioPlayer!
+    var inHounse = true
     
     private init() {}
   
     func bgmPlaySound(name: String, loopNum: Int = -1, rate: Float) {
-        guard let path = Bundle.main.path(forResource: name, ofType: "mp3") else {
+        let filename: String
+        if inHounse {
+            filename = "inHouse"
+        } else {
+            filename = name
+        }
+        guard let path = Bundle.main.path(forResource: filename, ofType: "mp3") else {
             print("音源ファイルが見つかりません")
             return
         }

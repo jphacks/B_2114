@@ -180,18 +180,18 @@ class MLManeger: ObservableObject{
         case "run":
             jumptoggle = false
             if preLabel != "run" || preLabel == "" {
-                Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
+                Ch.shared.bgmPlaySound(name: "gamebgm", rate: 1.5)
             } else if preLabel == "walk"{
-                Ch.shared.changeRateBgm(rate: 0.7)
+                Ch.shared.changeRateBgm(rate: 1.5)
                 movieRate = Float(2.0)
             }
             preLabel = "run"
         case "walk":
             jumptoggle = false
             if preLabel != "walk" || preLabel == "" {
-                Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.4)
+                Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
             } else if preLabel == "run" {
-                Ch.shared.changeRateBgm(rate: 0.5)
+                Ch.shared.changeRateBgm(rate: 0.7)
                 movieRate = Float(1.1)
             }
             preLabel = "walk"
