@@ -32,7 +32,7 @@
 #### API・データ
 * 
 * 
-
+<img src="https://github.com/jphacks/B_2114/blob/master/tech_spec.png" width="100%">
 #### フレームワーク・ライブラリ・モジュール
 * Swift
 * SwiftUI
