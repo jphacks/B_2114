@@ -29,9 +29,6 @@
 
 ## 開発技術
 ### 活用した技術
-#### API・データ
-* 
-* 
 <img src="https://github.com/jphacks/B_2114/blob/master/tech_spec.png" width="100%">
 #### フレームワーク・ライブラリ・モジュール
 * Swift
@@ -48,7 +45,3 @@
 * 歩く，走る，ジャンプの行動認識モデル
 * https://github.com/jphacks/B_2114/commit/f823d29c6130f016bada3cff459f6c18f1df601c
 * https://github.com/jphacks/B_2114/commit/6e9830c206fc35e3569a54f91157d211288ed111
-
-#### 製品に取り入れた研究内容（データ・ソフトウェアなど）（※アカデミック部門の場合のみ提出必須）
-* 
-* 
