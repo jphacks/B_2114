@@ -11,9 +11,13 @@ import CoreLocation
 class BLEManeger: NSObject, ObservableObject, CLLocationManagerDelegate {
 
     @Published var rssi = 0
-
+    @Published var inHounse =  true
+    var preInHounse = true
     var trackLocationManager : CLLocationManager!
     var beaconRegion : CLBeaconRegion!
+
+    var rssiOverCnt: Int = 0
+    var rssiUnderCnt: Int = 0
 
     override init() {
         super.init()
@@ -77,6 +81,25 @@ class BLEManeger: NSObject, ObservableObject, CLLocationManagerDelegate {
             if becon.minor == 1100 {
                 rssi = becon.rssi
                 print(rssi)
+                if rssi > -65 {
+                    rssiOverCnt += 1
+                    rssiUnderCnt = 0
+                    if rssiOverCnt == 3 {
+                        inHounse = true
+                        Ch.shared.inHounse = true
+                        Ch.shared.sePlaySound(name: "enter2")
+                        Ch.shared.bgmPlaySound(name: "inHouse", rate: 0.7)
+                    }
+                } else {
+                    rssiUnderCnt += 1
+                    rssiOverCnt = 0
+                    if rssiUnderCnt == 3 {
+                        inHounse = false
+                        Ch.shared.inHounse = false
+                        Ch.shared.sePlaySound(name: "enter2")
+                        Ch.shared.bgmPlaySound(name: "gamebgm", rate: 0.7)
+                    }
+                }
             }
         }
     }

@@ -10,13 +10,17 @@ import AVKit
 
 struct ContentView: View {
     @EnvironmentObject var mlManeger: MLManeger
-//    @State private var jumptoggle: Bool = true
+    @ObservedObject var bleManeger = BLEManeger()
     var body: some View {
         VStack{
             ZStack(alignment: .bottom) {
-                MovieView()
-//                Image("room")
-                    .frame(width: 760, height: 760)
+                if bleManeger.inHounse {
+                    Image("room")
+                        .frame(width: 760, height: 760)
+                } else {
+                    MovieView()
+                        .frame(width: 760, height: 760)
+                }
                 Image("person_run")
                     .resizable()
                     .frame(width: 160.0, height: 200.0, alignment: .leading)
